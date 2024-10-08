@@ -3,7 +3,8 @@
 include('../db_connect.php');
 
 // Function to delete a record from the specified table
-function deleteRecord($conn, $table, $id) {
+function deleteRecord($conn, $table, $id)
+{
     try {
         $sql = "DELETE FROM $table WHERE id = :id";
         $stmt = $conn->prepare($sql);
@@ -28,24 +29,27 @@ if (isset($_GET['id']) && isset($_GET['table'])) {
 
     // Define an array of valid tables for deletion
 
-    $validTables = ['categories', 'subcategories', 'items'];
+    $validTables = ['categories', 'subcategories', 'brands', 'items'];
 
 
     // Check if the specified table is valid
     if (in_array($table, $validTables)) {
         // Call the delete function
         if (deleteRecord($conn, $table, $id)) {
-            
+
             // Redirect to different locations based on the table deleted
             switch ($table) {
                 case 'categories':
-                    header("Location: categorylist.php"); 
+                    header("Location: categorylist.php");
                     break;
                 case 'subcategories':
-                    header("Location: subcategorylist.php"); 
+                    header("Location: subcategorylist.php");
+                    break;
+                case 'brands':
+                    header("Location: brandList.php");
                     break;
                 case 'items':
-                    header("Location: itemsList.php"); 
+                    header("Location: itemsList.php");
                     break;
                 default:
                     echo "Error: Unknown table.";

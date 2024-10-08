@@ -53,7 +53,7 @@ include('../db_connect.php');
                                             <td> <?php echo $item['subcategory_name'] ?> </td>
 
                                             <td>
-                                                <a href="" class="btn btn-warning">
+                                                <a href="editItems.php?id=<?php echo $item['id'] ?>" class="btn btn-warning">
                                                     <i class="icofont-ui-settings">Edit</i>
                                                 </a>
 

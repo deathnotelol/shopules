@@ -68,6 +68,28 @@ if(isset($_POST['subcatadd'])) {
     header('Location: subcategorylist.php');
 }
 
-?>
+
+// Add Brands
+if(isset($_POST['brandAdd'])) {
+
+    $brandName = $_POST['brandName'];
+    $brandPhoto = $_FILES['brandPhoto'];
+    
+    $basepath = '../photo/brands/';
+    $fullpath = $basepath.$brandPhoto['name'];
+    move_uploaded_file($brandPhoto['tmp_name'], $fullpath);
+    
+    $sql = "INSERT INTO brands (name, photo) VALUES (:name, :photo)";
+    $stmt = $conn->prepare($sql);
+    $stmt->bindParam(':name', $brandName);
+    $stmt->bindParam(':photo', $fullpath);
+    $stmt->execute();
+    
+    header('Location: brandList.php');
+}
+
+
+
+
 
 

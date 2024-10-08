@@ -7,10 +7,10 @@ include('../db_connect.php');
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1> <i class="icofont-list"></i> Category </h1>
+            <h1> <i class="icofont-list"></i> Brands </h1>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
-            <a href="categoryform.php" class="btn btn-outline-primary">
+            <a href="addBrands.php" class="btn btn-outline-primary">
                 <i class="icofont-plus">Add</i>
             </a>
         </ul>
@@ -30,25 +30,25 @@ include('../db_connect.php');
                                 </tr>
                             </thead>
                             <?php
-                            $sql = "SELECT * FROM categories ORDER BY id DESC";
+                            $sql = "SELECT * FROM brands ORDER BY id DESC";
 
                             $stmt = $conn->prepare($sql);
                             $stmt->execute();
-                            $categories = $stmt->fetchAll();
+                            $brands = $stmt->fetchAll();
                             $count = 1;
-                            foreach ($categories as $category) { ?>
+                            foreach ($brands as $brand) { ?>
                                 <tbody>
                                     <tr>
                                         <td> <?php echo $count++ ?> </td>
-                                        <td> <?php echo $category['name'] ?> </td>
-                                        <td> <img src="<?php echo $category['photo'] ?>" alt="" width="50px" height="50px"> </td>
+                                        <td> <?php echo $brand['name'] ?> </td>
+                                        <td> <img src="<?php echo $brand['photo'] ?>" alt="" width="50px" height="50px"> </td>
 
                                         <td>
-                                            <a href="editCategories.php?id=<?php echo $category['id'] ?>" class="btn btn-warning">
+                                            <a href="editBrand.php?id=<?php echo $brand['id'] ?>" class="btn btn-warning">
                                                 <i class="icofont-ui-settings">Edit</i>
                                             </a>
 
-                                            <a href="deleteData.php?id=<?php echo $category['id'] ?>&table=categories" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this categories?');">
+                                            <a href="deleteData.php?id=<?php echo $brand['id'] ?>&table=brands" class="btn btn-outline-danger" onclick="return confirm('Are you sure you want to delete this brands?');">
                                                 <i class="icofont-close">Delete</i>
                                             </a>
                                         </td>

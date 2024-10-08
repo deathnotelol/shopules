@@ -123,17 +123,13 @@ session_start();
     <ul class="app-menu">
       <li><a class="app-menu__item active" href="dashboard.php"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
       <li class="treeview"><a class="app-menu__item" href="categorylist.php" ><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Category</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-<!-- 
-        <ul class="treeview-menu">
-          <li><a class="treeview-item" href="bootstrap-components.html"><i class="icon fa fa-circle-o"></i> Sub Category</a></li>
-          <li><a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Items </a></li>
-        </ul> -->
-
       </li>
 
       <li><a class="app-menu__item" href="subcategorylist.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Sub Category</span></a></li>
 
       <li><a class="app-menu__item" href="itemsList.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Items List</span></a></li>
+
+      <li><a class="app-menu__item" href="brandList.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Brand List</span></a></li>
 
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Forms</span><i class="treeview-indicator fa fa-angle-right"></i></a>
