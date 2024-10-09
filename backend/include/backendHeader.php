@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 ?>
 
@@ -102,27 +102,27 @@ session_start();
     <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/48.jpg" alt="User Image">
       <div>
         <p class="app-sidebar__user-name">
-          <?php 
-          if(isset($_SESSION['login_user'])) {
-            echo $_SESSION['login_user'] ['name'];
+          <?php
+          if (isset($_SESSION['login_user'])) {
+            echo $_SESSION['login_user']['name'];
           }
 
 
           ?>
         </p>
-        <p class="app-sidebar__user-designation"><?php 
-          if(isset($_SESSION['login_user'])) {
-            echo $_SESSION['login_user'] ['email'];
-          }
-          ?>
-</p>
+        <p class="app-sidebar__user-designation"><?php
+                                                  if (isset($_SESSION['login_user'])) {
+                                                    echo $_SESSION['login_user']['email'];
+                                                  }
+                                                  ?>
+        </p>
       </div>
     </div>
 
-    
+
     <ul class="app-menu">
       <li><a class="app-menu__item active" href="dashboard.php"><i class="app-menu__icon fa fa-dashboard"></i><span class="app-menu__label">Dashboard</span></a></li>
-      <li class="treeview"><a class="app-menu__item" href="categorylist.php" ><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Category</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+      <li class="treeview"><a class="app-menu__item" href="categorylist.php"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Category</span><i class="treeview-indicator fa fa-angle-right"></i></a>
       </li>
 
       <li><a class="app-menu__item" href="subcategorylist.php"><i class="app-menu__icon fa fa-pie-chart"></i><span class="app-menu__label">Sub Category</span></a></li>
@@ -158,6 +158,8 @@ session_start();
           <li><a class="treeview-item" href="page-error.html"><i class="icon fa fa-circle-o"></i> Error Page</a></li>
         </ul>
       </li>
-      <li><a class="app-menu__item" href="docs.html"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">Docs</span></a></li>
+      <li><a class="app-menu__item" href="logout.php"><i class="app-menu__icon fa fa-file-code-o"></i><span class="app-menu__label">
+            Log Out
+      </span></a></li>
     </ul>
   </aside>

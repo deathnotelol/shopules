@@ -110,7 +110,7 @@ session_start();
                             <div class="dropdown-divider"></div>
 
                             <a class="dropdown-item" href="">
-								<?php
+							<?php
 								session_destroy(); 
 								?>
 						    	Logout
